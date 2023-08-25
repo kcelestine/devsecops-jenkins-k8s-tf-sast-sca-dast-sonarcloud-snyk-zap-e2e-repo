@@ -28,11 +28,18 @@ pipeline {
             }
     }
 
-	stage('Push') {
+
+	   stage('Push') {
             steps {
-		    sh 'docker tag asg:latest 773087595665.dkr.ecr.us-east-1.amazonaws.com/asg:latest && docker push 773087595665.dkr.ecr.us-east-1.amazonaws.com/asg:latest '
+                script{
+                    docker.withRegistry('https://773087595665.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:aws-credentials') {
+                    app.push("latest")
+                    }
+                }
             }
     	}
+
+
 	   
 	stage('Kubernetes Deployment of ASG Bugg Web Application') {
 	   steps {

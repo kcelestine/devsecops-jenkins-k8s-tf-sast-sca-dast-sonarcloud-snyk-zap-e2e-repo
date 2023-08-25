@@ -6,7 +6,7 @@ pipeline {
    stages{
     stage('CompileandRunSonarAnalysis') {
             steps {	
-		sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=kcelestine_devsecops-jenkins-k8s-tf-sast-sca-dast-sonarcloud-snyk-zap-e2e-repo -Dsonar.organization=kcelestine-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=dc8cb70a84f715a996af9b418ab67c422d65dcbe'
+		sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=aguru -Dsonar.organization=aguru -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=dc8cb70a84f715a996af9b418ab67c422d65dcbe'
 			}
     }
 

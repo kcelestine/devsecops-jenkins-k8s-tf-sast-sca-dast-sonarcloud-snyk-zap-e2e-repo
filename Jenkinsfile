@@ -30,7 +30,7 @@ pipeline {
 
 	stage('Push') {
             steps {
-		    sh 'docker push asg:latest'
+		    sh 'docker image push 773087595665.dkr.ecr.us-east-1.amazonaws.com/asg:latest'
             }
     	}
 	   
